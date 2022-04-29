@@ -23,6 +23,7 @@ public class Printer extends Thread {
                 System.out.println("Interrupted Thread..");
             }
         }
+        System.out.println(name + " finished.");
 
     }
 }
