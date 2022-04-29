@@ -1,7 +1,7 @@
 package com.onurgundogdu;
 
-public class Printer extends Thread {
-
+//public class Printer extends Thread {
+public class Printer implements Runnable {
     private String name;
 
     public Printer(String name)
