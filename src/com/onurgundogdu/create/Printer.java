@@ -1,4 +1,4 @@
-package com.onurgundogdu;
+package com.onurgundogdu.create;
 
 //public class Printer extends Thread {
 public class Printer implements Runnable {
