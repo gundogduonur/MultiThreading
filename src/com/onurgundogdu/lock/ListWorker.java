@@ -4,17 +4,26 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ListWorker {
+
     Random random=new Random();
     ArrayList<Integer> list1=new ArrayList<Integer>();
     ArrayList<Integer> list2=new ArrayList<Integer>();
 
-    public synchronized void  addList() throws InterruptedException {
+    private Object lock1=new Object();
+    private Object lock2=new Object();
+
+
+
+    public  void  addList() throws InterruptedException {
+        synchronized (lock1){
             Thread.sleep(1);
             list1.add(random.nextInt(100));
-    }
-    public synchronized void addList2() throws InterruptedException {
+    }}
+    public  void addList2() throws InterruptedException {
+        synchronized (lock2){
         Thread.sleep(1);
         list2.add(random.nextInt(100));
+    }
     }
     public void addValue() throws InterruptedException {
         for (int i = 0; i < 1000; i++) {
