@@ -8,11 +8,11 @@ public class ListWorker {
     ArrayList<Integer> list1=new ArrayList<Integer>();
     ArrayList<Integer> list2=new ArrayList<Integer>();
 
-    public void addList() throws InterruptedException {
+    public synchronized void  addList() throws InterruptedException {
             Thread.sleep(1);
             list1.add(random.nextInt(100));
     }
-    public void addList2() throws InterruptedException {
+    public synchronized void addList2() throws InterruptedException {
         Thread.sleep(1);
         list2.add(random.nextInt(100));
     }
