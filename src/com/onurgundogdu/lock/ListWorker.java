@@ -8,7 +8,7 @@ public class ListWorker {
     Random random=new Random();
     ArrayList<Integer> list1=new ArrayList<Integer>();
     ArrayList<Integer> list2=new ArrayList<Integer>();
-
+   
     private Object lock1=new Object();
     private Object lock2=new Object();
 
