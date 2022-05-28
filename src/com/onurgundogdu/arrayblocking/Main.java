@@ -1,5 +1,8 @@
 package com.onurgundogdu.arrayblocking;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Main {
     public static void main(String[] args) {
      ProducerConsumer producerConsumer=new ProducerConsumer();
@@ -15,5 +18,15 @@ public class Main {
              producerConsumer.consume();
          }
      });
+     producer.start();
+     consumer.start();
+     try {
+         producer.join();
+         consumer.join();
+     }
+     catch (InterruptedException exception)
+     {
+         Logger.getLogger(Main.class.getName()).log(Level.SEVERE,null,exception);
+     }
     }
 }
