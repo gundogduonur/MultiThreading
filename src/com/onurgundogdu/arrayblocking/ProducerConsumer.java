@@ -33,4 +33,23 @@ public class ProducerConsumer {
         }
     }
 
+    public void consume()
+    {
+        while(true)
+        {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                Logger.getLogger(ProducerConsumer.class.getName()).log(Level.SEVERE,null,e);
+            }
+            try {
+                Integer value = queue.take();
+                System.out.println("Consume.."+value);
+                System.out.println("Queue Size: "+queue.size());
+            } catch (InterruptedException e) {
+                Logger.getLogger(ProducerConsumer.class.getName()).log(Level.SEVERE,null,e);
+            }
+        }
+    }
+
 }
